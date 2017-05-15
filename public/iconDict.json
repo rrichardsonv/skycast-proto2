@@ -1,0 +1,24 @@
+{
+  "weather":[{
+    "matcher":"^cloudy",
+    "icon":"cloudy.svg"
+  }, {
+    "matcher":"partly.*",
+    "icon":"partlycloudy.svg"
+  }, {
+    "matcher":"rain",
+    "icon":"rain.svg"
+  }, {
+    "matcher":"(sunny|clear)",
+    "icon":"sunny.svg"
+  }, {
+    "matcher":"storm",
+    "icon":"thunderstorm.svg"
+  }, {
+    "matcher":"wind",
+    "icon":"wind.svg"
+  }, {
+    "matcher":"sleet",
+    "icon":"sleet.svg"
+  }]
+}

@@ -9,45 +9,45 @@ const DEFAULT_STATE = {
     errorMsg: ''
 }
 const requestWeather = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.forecasts, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {forecasts: newForecasts})
   return newState
 }
 const recieveWeather = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.forecasts, {
     isFetching: action.isFetching,
     currently: action.currently,
     hourly: action.hourly,
     daily: action.daily
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {forecasts: newForecasts})
   return newState
 }
 const recieveWeatherError = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.forecasts, {
     isFetching: action.isFetching,
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {forecasts: newForecasts})
   return newState
 }
 const resolveWeatherError = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.forecasts, {
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {forecasts: newForecasts})
   return newState
 }
 
