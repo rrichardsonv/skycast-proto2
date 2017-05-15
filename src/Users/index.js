@@ -39,21 +39,23 @@ class Landing extends BaseComponent {
   }
 
   render () {
-    return (
-      {if (this.state.navigateNext) {
-          <div className='landing-container'>
-            <div className='centered-card'>
-              <h1 className='main-heading'>SkyCast</h1>
-              <LandingForm
-                handleLogin={this._dispatchLogin}
-                handleRegister={this._dispatchRegistration}
-              />
-            </div>
+    if (!this.state.navigateNext) {
+      return (
+        <div className='landing-container'>
+          <div className='centered-card'>
+            <h1 className='main-heading'>SkyCast</h1>
+            <LandingForm
+              handleLogin={this._dispatchLogin}
+              handleRegister={this._dispatchRegistration}
+            />
           </div>
-        } else {
-          <Redirect to='/search' />}
-      }}
-    )
+        </div>
+      )
+    } else {
+      return (
+        <Redirect to='/search' />
+      )
+    }
   }
 } 
 const { func, object } = PropTypes

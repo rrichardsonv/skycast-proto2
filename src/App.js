@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import { Route } from 'react-router'
 import rootReducer from './rootReducer'
-import Landing from './Landing/index'
+import Landing from './Users/index'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import logo from './logo.svg';
