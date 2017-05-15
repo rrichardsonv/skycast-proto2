@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
-import usersReducer from './Users/reducers'
-import forecastsReducer from './Forecasts/reducers'
-import searchesReducer from './Searches/reducers'
+import users from './Users/reducers'
+import forecasts from './Forecasts/reducers'
+import searches from './Searches/reducers'
 
 const rootReducer = combineReducers({
-  usersReducer,
-  searchesReducer,
-  forecastsReducer
+  users,
+  searches,
+  forecasts
 })
 
 export default rootReducer

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { Route } from 'react-router'
 import rootReducer from './rootReducer'
 import Landing from './Users/index'
+import Search from './Searches/index'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import logo from './logo.svg';
@@ -20,7 +21,8 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h2>Welcome to React</h2>
           </div>
-          <Route exactly pattern='/' component={Landing}/>
+          <Route exact path='/' component={Landing} />
+          <Route path='/search' component={Search} />
         </div>
       </Provider>
     )

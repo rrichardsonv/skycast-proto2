@@ -61,14 +61,14 @@ class Landing extends BaseComponent {
 const { func, object } = PropTypes
 Landing.propTypes = {
   dispatch: func,
-  userData: object
+  users: object
 }
 Landing.contextTypes = {
   router: object
 }
 const mapStateToProps = (state) => {
   return {
-    userData: state.userData
+    users: state.users
   }
 }
 

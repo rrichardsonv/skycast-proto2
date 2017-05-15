@@ -3,13 +3,11 @@ RESOLVE_CREDENTIALS_ERROR } from './actions'
 
 
 const DEFAULT_STATE = {
-  userData: {
     isFetching: false,
     token: '',
     searches: [],
     err: false,
     errorMsg: ''
-  }
 }
 
 const requestUserCreation = (state, action) => {
@@ -83,7 +81,7 @@ const resolveCredentialsError = (state, action) => {
   return newState
 }
 
-const usersReducer = (state = DEFAULT_STATE, action) => {
+const users = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
     case REQUEST_USER_CREATION:
       return requestUserCreation(state, action)
@@ -104,4 +102,4 @@ const usersReducer = (state = DEFAULT_STATE, action) => {
   }
 }
 
-export default usersReducer
+export default users

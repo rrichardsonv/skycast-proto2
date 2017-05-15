@@ -1,4 +1,4 @@
-import { prepareUrl, nestParams } from '../globalHelpers'
+import { prepareUrl } from '../globalHelpers'
 import axios from 'axios'
 
 const apiKey = {key: '99e6fa12fbff'}

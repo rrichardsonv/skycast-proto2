@@ -1,14 +1,12 @@
 import { REQUEST_LOCATION, RECIEVE_LOCATION, RECIEVE_LOCATION_ERROR, RESOLVE_LOCATION_ERROR, REQUEST_USER_SEARCHES, RECIEVE_USER_SEARCHES, RECIEVE_USER_SEARCHES_ERROR } from './actions'
 
 const DEFAULT_STATE = {
-  locationData: {
     isFetching: false,
     zipcode: '',
     cityState: '',
     geolocation: [],
     err: false,
     errorMsg: ''
-  }
 }
 const requestLocation = (state, action) => {
   const newLocationData = {}
@@ -83,7 +81,7 @@ const recieveUserSearchesError = (state, action) => {
   return newState
 }
 
-const searchesReducer = (state = DEFAULT_STATE, action) => {
+const searches = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
     case REQUEST_LOCATION:
       return requestLocation(state, action)
@@ -104,4 +102,4 @@ const searchesReducer = (state = DEFAULT_STATE, action) => {
   }
 }
 
-export default searchesReducer
+export default searches

@@ -1,14 +1,12 @@
 import { REQUEST_WEATHER, RECIEVE_WEATHER, RECIEVE_WEATHER_ERROR, RESOLVE_WEATHER_ERROR } from './actions'
 
 const DEFAULT_STATE = {
-  weatherData: {
     isFetching: false,
     currently: {},
     hourly: {},
     daily: {},
     err: false,
     errorMsg: ''
-  }
 }
 const requestWeather = (state, action) => {
   const newWeatherData = {}
@@ -54,7 +52,7 @@ const resolveWeatherError = (state, action) => {
 }
 
 
-const forecastsReducer = (state = DEFAULT_STATE, action) => {
+const forecasts = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
     case REQUEST_WEATHER:
       return requestWeather(state, action)
@@ -69,4 +67,4 @@ const forecastsReducer = (state = DEFAULT_STATE, action) => {
   }
 }
 
-export default forecastsReducer
+export default forecasts

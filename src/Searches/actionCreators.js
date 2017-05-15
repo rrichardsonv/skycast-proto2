@@ -1,5 +1,5 @@
 import { REQUEST_LOCATION, RECIEVE_LOCATION, RECIEVE_LOCATION_ERROR, RESOLVE_LOCATION_ERROR, REQUEST_USER_SEARCHES, RECIEVE_USER_SEARCHES, RECIEVE_USER_SEARCHES_ERROR } from './actions'
-import { getSearches } from './requests'
+import { getSearches, getGeocoding } from './requests'
 import { getWeatherData } from '../Forecasts/actionCreators'
 
 export function requestUserSearches (token) {
@@ -81,10 +81,9 @@ export function getLocationData (zipcode, token = '') {
   if (token.length > 1) {
     options.push(token)
   }
-  const googleApi = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBaxDnDSHYtYRWHYtsmfJYazlGSCjYwHrg&components=postal_code:'
   return function (dispatch, getState) {
     dispatch(requestLocation(zipcode))
-    axios.get(googleApi + zipcode)
+    getGeocoding(zipcode)
     .then((response) => {
       if (response.data.results.length === 0) {
         dispatch(recieveLocationError(response.data.status))
