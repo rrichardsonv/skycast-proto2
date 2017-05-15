@@ -18,7 +18,6 @@ class Forecasts extends BaseComponent {
     // const weekToDay = daily.data || []
     let currentReady
     if (currently) {
-      console.log(currently)
       currentReady = (
         <CurrentForecast currently={currently} />
       )
@@ -62,6 +61,7 @@ Forecasts.propTypes = {
   })
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     searches: state.searches,
     forecasts: state.forecasts

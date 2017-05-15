@@ -1,12 +1,14 @@
 import { REQUEST_WEATHER, RECIEVE_WEATHER, RECIEVE_WEATHER_ERROR, RESOLVE_WEATHER_ERROR } from './actions'
 
 const DEFAULT_STATE = {
+  data: {
     isFetching: false,
     currently: {},
     hourly: {},
     daily: {},
     err: false,
     errorMsg: ''
+  }
 }
 const requestWeather = (state, action) => {
   const newForecasts = {}
