@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import WeatherCard from './WeatherCard'
+import WeatherCard from './WeatherCard/index'
 
 class CurrentForecast extends Component {
   render () {

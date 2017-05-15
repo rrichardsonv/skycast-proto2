@@ -63,8 +63,8 @@ Forecasts.propTypes = {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    searches: state.searches,
-    forecasts: state.forecasts
+    searches: state.searches.data,
+    forecasts: state.forecasts.data
   }
 }
 

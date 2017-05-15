@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BaseComponent from '../BaseComponent'
-import iconDict from '../../public/iconDict.json'
+import BaseComponent from '../../BaseComponent'
+import iconDict from './iconDict.json'
 
 class WeatherCard extends BaseComponent {
   constructor (props) {
@@ -50,7 +50,7 @@ class WeatherCard extends BaseComponent {
     }
     return (
       <div className='weather-card'>
-        <img className='weather-icon' src={`../public/images/${image.icon}`} alt={image.icon} />
+        <img className='weather-icon' src={`${process.env.PUBLIC_URL}/${image.icon}`} alt='forecast-img' />
         <div className='summary'>
           {weather.summary}
         </div>
