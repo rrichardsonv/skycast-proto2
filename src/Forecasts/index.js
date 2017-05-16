@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BaseComponent from '../BaseComponent'
 import { connect } from 'react-redux'
+import { getLocationData } from '../Searches/actionCreators'
+import BaseComponent from '../BaseComponent'
 import CurrentForecast from './CurrentForecast'
 import FiveDayForecast from './FiveDayForecast'
 import TemperatureChart from './TemperatureChart'
-import { getLocationData } from '../Searches/actionCreators'
 
 class Forecasts extends BaseComponent {
   componentDidMount () {

@@ -22,29 +22,31 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h2>Welcome to React</h2>
           </div>
-          <Route exact path='/' component={Landing} />
-          <Route path='/search' component={Search} />
-          <Route path='/forecast' component={Forecasts} />
-          <Route
-            path='/weather/:zip'
-            component={(props) => {
-              let resultComponent
-              // console.log(props.match)
-              if (props.match.params.zip) {
-                resultComponent = (
-                  <Forecasts
-                    urlZip={props.match.params.zip}
-                    searchOnEnter
-                  />
-                )
-              } else {
-                resultComponent = (
-                  null
-                )
-              }
-              return resultComponent
-            }}
-          />
+          <div className="app-content">
+            <Route exact path='/' component={Landing} />
+            <Route path='/search' component={Search} />
+            <Route path='/forecast' component={Forecasts} />
+            <Route
+              path='/weather/:zip'
+              component={(props) => {
+                let resultComponent
+                // console.log(props.match)
+                if (props.match.params.zip) {
+                  resultComponent = (
+                    <Forecasts
+                      urlZip={props.match.params.zip}
+                      searchOnEnter
+                    />
+                  )
+                } else {
+                  resultComponent = (
+                    null
+                  )
+                }
+                return resultComponent
+              }}
+            />
+          </div>
         </div>
       </Provider>
     )
