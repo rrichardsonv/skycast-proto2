@@ -11,6 +11,6 @@ export function getSearches (token) {
   return axios.get(prepareUrl(searches, params))
 }
 export function getGeocoding (zipcode) {
-  const googleKey = `https://maps.googleapis.com/maps/api/geocode/json?key=${googleApiKey}&components=postal_code:`
-  return axios.get(googleKey + zipcode)
+  var googleGet = "https://maps.googleapis.com/maps/api/geocode/json?key=" + googleApiKey + "&components=postal_code:"
+  return axios.get(googleGet + zipcode)
 }
