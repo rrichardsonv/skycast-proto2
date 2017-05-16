@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { Route } from 'react-router'
 import rootReducer from './rootReducer'
@@ -7,7 +7,8 @@ import Search from './Searches/index'
 import Forecasts from './Forecasts/index'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import logo from './logo.svg';
+import logo from '../public/sunny.svg'
+import cloud from '../public/cloudy.svg'
 import './App.css';
 
 const store = createStore(rootReducer,
@@ -20,7 +21,10 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+            <h2>SkyCast Prototype</h2>
+            <div className="cloud-path">
+              <img src={cloud} className="moving-cloud"  alt="☁"/>
+            </div>
           </div>
           <div className="app-content">
             <Route exact path='/' component={Landing} />

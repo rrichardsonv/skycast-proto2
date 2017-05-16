@@ -35,7 +35,11 @@ class SearchForm extends BaseComponent {
           name='postal_code'
           placeholder='zipcode'
         />
-        <input type='submit' value='Forecast' />
+        <input
+          className='log-btn'
+          type='submit'
+          value='Forecast'
+        />
       </form>
     )
     } else {

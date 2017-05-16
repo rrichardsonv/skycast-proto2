@@ -10,10 +10,58 @@ div{
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.cloud-path{
+  width: 100vw;
+  position: absolute;
+  top: 40px;
+}
+.moving-cloud{
+  height: 80px;
+  padding-top: 10px;
+  animation: Cloud-drift-translate infinite 40s linear;
+}
+.landing-container, .search-container{
+  width: 60%;
+  margin: 0 auto;
+}
+input {
+  width: 90%;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
+.log-form {
+  width: 100%;
+  min-width: 300px;
+}
+
+.log-btn {
+  margin-top: 15px;
+  padding: 10px 40px;
+  background-color: #333;
+  color: #fafafa;
+  border-color: transparent;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: outset;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.log-btn:hover, .log-btn:focus {
+  background-color: #666;
+}
+
+.log-btn:active {
+  background-color: #fafafa;
+  color: #333;
+  border-color: #333;
+}
 .App-header {
-  background-color: #222;
-  display: grid;
+  background-color: cadetblue;
   height: 150px;
   padding: 20px;
   color: white;
@@ -22,7 +70,10 @@ div{
 .App-intro {
   font-size: large;
 }
-
+@keyframes Cloud-drift-translate {
+  0% { transform: translateX(-40vw); }
+  100% { transform: translateX(40vw); }
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
