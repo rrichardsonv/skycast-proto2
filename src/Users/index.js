@@ -44,7 +44,7 @@ class Landing extends BaseComponent {
       loginStatus = (
         <div className='landing-container'>
           <div className='centered-card'>
-            <h1 className='main-heading'>SkyCast</h1>
+            <h1 className='main-heading'>Wondering Weather?</h1>
             <LandingForm
               handleLogin={this._dispatchLogin}
               handleRegister={this._dispatchRegistration}

@@ -4,7 +4,7 @@ import SearchForm from './SearchForm'
 class Search extends Component {
   render () {
     return (
-      <div className='container'>
+      <div className='search-container'>
         <div className='centered-card'>
           <SearchForm />
         </div>
