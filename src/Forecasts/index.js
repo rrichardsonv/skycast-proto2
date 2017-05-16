@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BaseComponent from '../BaseComponent'
 import { connect } from 'react-redux'
-import CurrentForecast from './CurrentForecast'
 import { getLocationData } from '../Searches/actionCreators'
+import BaseComponent from '../BaseComponent'
+import CurrentForecast from './CurrentForecast'
+import FiveDayForecast from './FiveDayForecast'
+import TemperatureChart from './TemperatureChart'
 
 class Forecasts extends BaseComponent {
   componentDidMount () {
@@ -13,9 +15,9 @@ class Forecasts extends BaseComponent {
   }
   render () {
     const { cityState, zipcode } = this.props.searches
-    // const daily = this.props.forecasts.daily
+    const daily = this.props.forecasts.daily
     const currently = this.props.forecasts.currently
-    // const weekToDay = daily.data || []
+    const weekToDay = daily.data || []
     let currentReady
     if (currently) {
       currentReady = (
@@ -33,6 +35,10 @@ class Forecasts extends BaseComponent {
         <div className='main-content'>
           <section className='today'>
             {currentReady}
+          </section>
+          <FiveDayForecast weekToDay={weekToDay}/>
+          <section className='temperature-chart'>
+            <TemperatureChart daily={daily} />
           </section>
         </div>
       </div>
@@ -61,7 +67,6 @@ Forecasts.propTypes = {
   })
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     searches: state.searches.data,
     forecasts: state.forecasts.data

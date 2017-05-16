@@ -1,3 +1,7 @@
+div{
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -9,6 +13,7 @@
 
 .App-header {
   background-color: #222;
+  display: grid;
   height: 150px;
   padding: 20px;
   color: white;
@@ -21,4 +26,100 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.app-content {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  min-width: 100vh;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Veranda', sans-serif;
+  color: #333;
+}
+.main-heading {
+  color: #B10DC9;
+  font-family: Skia;
+  font-weight: normal;
+}
+.centered-card {
+  background-color: aliceblue;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 8px 6px -8px #000; 
+}
+.weather-card{
+  width: 18%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.weather-icon{
+  border: 0;
+  height: 5em;
+}
+header{
+ border-top: 0.5px solid aliceblue;
+ border-bottom: 0.5px solid aliceblue;
+}
+.header-link-group{
+  list-style-type: none;
+  width: 100%;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+  padding: 40px;
+}
+.header-link-group li{
+  display:inline;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.header-link{
+  display: inline;
+}
+.header-link a{
+  text-decoration: none;
+}
+.search-history-wrap {
+  height: 100px;
+}
+.search-history {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+}
+section{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 6px -8px #000; 
+}
+
+.loading-img {
+  height: 6em;
+  -webkit-animation: spin 4s infinite linear;
+  -moz-animation: spin 4s infinite linear;
+  animation: spin 4s infinite linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
