@@ -66,6 +66,9 @@ input {
   padding: 20px;
   color: white;
 }
+.App-header h2{
+  animation: Rainy-title-change infinite 40s steps(2, end);
+}
 
 .App-intro {
   font-size: large;
@@ -75,8 +78,19 @@ input {
   100% { transform: translateX(40vw); }
 }
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes Rainy-title-change {
+  30% {
+    color: white;
+  }
+  50% {
+    color: lightgrey;
+  }
+  70% {
+    color: white;
+  }
 }
 
 .app-content {
@@ -105,11 +119,17 @@ input {
   border-radius: 5px;
   box-shadow: 0 8px 6px -8px #000; 
 }
+.five-day-forecast h3{
+  margin-bottom: 0px;
+}
 .weather-card{
   width: 18%;
+  padding-left: 1px;
+  padding-right: 1px;
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 .weather-icon{
   border: 0;
@@ -160,6 +180,23 @@ section{
   -webkit-animation: spin 4s infinite linear;
   -moz-animation: spin 4s infinite linear;
   animation: spin 4s infinite linear;
+}
+.rain-chance{
+  width: 50%;
+  float: left;
+  border-right: 1px solid black;
+}
+.tick{
+  border-top: 1px solid black;
+}
+.start.tick{
+  margin-right: 100px;
+}
+.end.tick{
+  margin-left: 100px;
+}
+.mid.tick{
+
 }
 
 @-moz-keyframes spin {

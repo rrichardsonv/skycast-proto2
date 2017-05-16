@@ -12,7 +12,7 @@ class TemperatureChart extends Component {
       name: 'High',
       values: []
     }]
-    for (var i = 0, j = data.length; i < j; i++) {
+    for (var i = 0, j = data.length - 1; i < j; i++) {
       var fc = data[i]
       var dayIndex = (new Date(fc.time * 1000)).getDay()
       tempSummary[0].values.push({
@@ -48,7 +48,7 @@ class TemperatureChart extends Component {
             data={cleanData}
             width={500}
             height={500}
-            title='Weekly Forecast'
+            title='Weekly Temp. Forecast'
             xAxisTickCount={7}
             yAxisLabel='Temparature (F)'
             yAxisTickCount={6}
