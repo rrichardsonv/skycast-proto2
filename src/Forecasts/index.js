@@ -14,14 +14,18 @@ class Forecasts extends BaseComponent {
     }
   }
   render () {
+    const hourly = this.props.forecasts.hourly
     const { cityState, zipcode } = this.props.searches
     const daily = this.props.forecasts.daily
     const currently = this.props.forecasts.currently
     const weekToDay = daily.data || []
     let currentReady
-    if (currently) {
+    if (currently && hourly) {
       currentReady = (
-        <CurrentForecast currently={currently} />
+        <CurrentForecast
+        currently={currently}
+        hourly={hourly}
+      />
       )
     } else {
       currentReady = (
@@ -30,10 +34,12 @@ class Forecasts extends BaseComponent {
     }
     return (
       <div className='results'>
-        <h1>{cityState}</h1>
-        <h3>{zipcode}</h3>
+        <div className='result-header'>
+          <h3>{cityState}, {zipcode}</h3>
+        </div>
         <div className='main-content'>
           <section className='today'>
+            <h3>Current Forecast</h3>
             {currentReady}
           </section>
           <FiveDayForecast weekToDay={weekToDay}/>
