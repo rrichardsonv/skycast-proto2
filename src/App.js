@@ -24,6 +24,7 @@ class App extends Component {
           </div>
           <Route exact path='/' component={Landing} />
           <Route path='/search' component={Search} />
+          <Route path='/forecast' component={Forecasts} />
           <Route
             path='/weather/:zip'
             component={(props) => {
