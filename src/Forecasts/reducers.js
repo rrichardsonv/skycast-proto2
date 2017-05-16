@@ -1,53 +1,55 @@
 import { REQUEST_WEATHER, RECIEVE_WEATHER, RECIEVE_WEATHER_ERROR, RESOLVE_WEATHER_ERROR } from './actions'
 
 const DEFAULT_STATE = {
+  data: {
     isFetching: false,
     currently: {},
     hourly: {},
     daily: {},
     err: false,
     errorMsg: ''
+  }
 }
 const requestWeather = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.data, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {data: newForecasts})
   return newState
 }
 const recieveWeather = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.data, {
     isFetching: action.isFetching,
     currently: action.currently,
     hourly: action.hourly,
     daily: action.daily
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {data: newForecasts})
   return newState
 }
 const recieveWeatherError = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.data, {
     isFetching: action.isFetching,
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {data: newForecasts})
   return newState
 }
 const resolveWeatherError = (state, action) => {
-  const newWeatherData = {}
-  Object.assign(newWeatherData, state.weatherData, {
+  const newForecasts = {}
+  Object.assign(newForecasts, state.data, {
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {weatherData: newWeatherData})
+  Object.assign(newState, state, {data: newForecasts})
   return newState
 }
 

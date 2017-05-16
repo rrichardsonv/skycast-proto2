@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import BaseComponent from '../BaseComponent'
 import LandingForm from './LandingForm'
-import Redirect from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postUserCreation, postSessionCreation } from './actionCreators'
 
@@ -11,7 +11,7 @@ class Landing extends BaseComponent {
     super(props)
     this._bind('_dispatchLogin', '_dispatchRegistration', '_parseCredentialsFromForm')
     this.state = {
-      navigateNext: false
+      authorized: false
     }
   }
   _parseCredentialsFromForm () {
@@ -27,7 +27,7 @@ class Landing extends BaseComponent {
     // console.log('reg submit')
     // console.log(credentials)
     this.props.dispatch(postUserCreation(credentials))
-    this.setState({navigateNext: true})
+    this.setState({authorized: true})
   }
   _dispatchLogin (ev) {
     ev.preventDefault()
@@ -35,12 +35,13 @@ class Landing extends BaseComponent {
     // console.log('log submit')
     // console.log(credentials)
     this.props.dispatch(postSessionCreation(credentials))
-    this.setState({navigateNext: true})
+    this.setState({authorized: true})
   }
 
   render () {
-    if (!this.state.navigateNext) {
-      return (
+    let loginStatus
+    if (!this.state.authorized) {
+      loginStatus = (
         <div className='landing-container'>
           <div className='centered-card'>
             <h1 className='main-heading'>SkyCast</h1>
@@ -52,10 +53,11 @@ class Landing extends BaseComponent {
         </div>
       )
     } else {
-      return (
+      loginStatus = (
         <Redirect to='/search' />
       )
     }
+    return (loginStatus)
   }
 } 
 const { func, object } = PropTypes
@@ -68,7 +70,7 @@ Landing.contextTypes = {
 }
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    users: state.users.data
   }
 }
 

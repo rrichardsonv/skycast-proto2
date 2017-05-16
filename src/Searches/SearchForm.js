@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BaseComponent from '../BaseComponent'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getLocationData } from './actionCreators'
 
@@ -8,6 +9,9 @@ class SearchForm extends BaseComponent {
   constructor (props) {
     super(props)
     this._bind('_handleLocationSearch')
+    this.state = {
+      submitted: false
+    }
   }
   _handleLocationSearch (ev) {
     ev.preventDefault()
@@ -16,9 +20,12 @@ class SearchForm extends BaseComponent {
     } else {
       this.props.dispatch(getLocationData(ev.target.firstChild.value))
     }
+    this.setState({submitted: true})
   }
   render () {
-    return (
+    let formStatus
+    if (!this.state.submitted) {
+      formStatus = (
       <form
         onSubmit={this._handleLocationSearch}
         className='location-form'
@@ -31,6 +38,12 @@ class SearchForm extends BaseComponent {
         <input type='submit' value='Forecast' />
       </form>
     )
+    } else {
+      formStatus = (
+        <Redirect to='/forecast' />
+      )
+    }
+    return (formStatus)
   }
 }
 const { func, string } = PropTypes

@@ -1,7 +1,7 @@
 import { prepareUrl } from '../globalHelpers'
 import axios from 'axios'
 
-const apiKey = {key: '99e6fa12fbff'}
+const apiKey = {key: process.env.REACT_APP_SKYCAST_API_KEY}
 
 export function postSearch (lat, long, zipcode = '', token = '') {
   const searches = 'searches?'

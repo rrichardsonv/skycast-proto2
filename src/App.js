@@ -4,6 +4,7 @@ import { Route } from 'react-router'
 import rootReducer from './rootReducer'
 import Landing from './Users/index'
 import Search from './Searches/index'
+import Forecasts from './Forecasts/index'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import logo from './logo.svg';
@@ -23,6 +24,27 @@ class App extends Component {
           </div>
           <Route exact path='/' component={Landing} />
           <Route path='/search' component={Search} />
+          <Route path='/forecast' component={Forecasts} />
+          <Route
+            path='/weather/:zip'
+            component={(props) => {
+              let resultComponent
+              // console.log(props.match)
+              if (props.match.params.zip) {
+                resultComponent = (
+                  <Forecasts
+                    urlZip={props.match.params.zip}
+                    searchOnEnter
+                  />
+                )
+              } else {
+                resultComponent = (
+                  null
+                )
+              }
+              return resultComponent
+            }}
+          />
         </div>
       </Provider>
     )

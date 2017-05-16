@@ -3,81 +3,83 @@ RESOLVE_CREDENTIALS_ERROR } from './actions'
 
 
 const DEFAULT_STATE = {
+  data: {
     isFetching: false,
     token: '',
     searches: [],
     err: false,
-    errorMsg: ''
+    errorMsg: ''    
+  }
 }
 
 const requestUserCreation = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const requestUserLogin = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const recieveUserToken = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching,
     token: action.token
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 
 const requestUserLogOut = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching,
     token: action.token
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const recieveUserLogOut = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 
 const recieveCredentialsError = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching,
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const resolveCredentialsError = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 

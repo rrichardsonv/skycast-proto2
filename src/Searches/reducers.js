@@ -1,83 +1,86 @@
 import { REQUEST_LOCATION, RECIEVE_LOCATION, RECIEVE_LOCATION_ERROR, RESOLVE_LOCATION_ERROR, REQUEST_USER_SEARCHES, RECIEVE_USER_SEARCHES, RECIEVE_USER_SEARCHES_ERROR } from './actions'
 
 const DEFAULT_STATE = {
+  data: {
+    recent: [],
     isFetching: false,
     zipcode: '',
     cityState: '',
     geolocation: [],
     err: false,
-    errorMsg: ''
+    errorMsg: '' 
+  }
 }
 const requestLocation = (state, action) => {
-  const newLocationData = {}
-  Object.assign(newLocationData, state.locationData, {
+  const newSearches = {}
+  Object.assign(newSearches, state.data, {
     isFetching: action.isFetching,
     zipcode: action.zipcode
   })
   const newState = {}
-  Object.assign(newState, state, {locationData: newLocationData})
+  Object.assign(newState, state, {data: newSearches})
   return newState
 }
 const recieveLocation = (state, action) => {
-  const newLocationData = {}
-  Object.assign(newLocationData, state.locationData, {
+  const newSearches = {}
+  Object.assign(newSearches, state.data, {
     isFetching: action.isFetching,
     cityState: action.cityState,
     geolocation: action.geolocation
   })
   const newState = {}
-  Object.assign(newState, state, {locationData: newLocationData})
+  Object.assign(newState, state, {data: newSearches})
   return newState
 }
 const recieveLocationError = (state, action) => {
-  const newLocationData = {}
-  Object.assign(newLocationData, state.locationData, {
+  const newSearches = {}
+  Object.assign(newSearches, state.data, {
     isFetching: action.isFetching,
     zipcode: action.zipcode,
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {locationData: newLocationData})
+  Object.assign(newState, state, {data: newSearches})
   return newState
 }
 const resolveLocationError = (state, action) => {
-  const newLocationData = {}
-  Object.assign(newLocationData, state.locationData, {
+  const newSearches = {}
+  Object.assign(newSearches, state.data, {
     err: action.err,
     errorMsg: action.errorMsg
   })
   const newState = {}
-  Object.assign(newState, state, {locationData: newLocationData})
+  Object.assign(newState, state, {data: newSearches})
   return newState
 }
 const requestUserSearches = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const recieveUserSearches = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching,
-    searches: action.searches
+    recent: action.searches
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 const recieveUserSearchesError = (state, action) => {
-  const newUserData = {}
-  Object.assign(newUserData, state.userData, {
+  const newUsers = {}
+  Object.assign(newUsers, state.data, {
     isFetching: action.isFetching,
     err: action.err
   })
   const newState = {}
-  Object.assign(newState, state, {userData: newUserData})
+  Object.assign(newState, state, {data: newUsers})
   return newState
 }
 
