@@ -1636,6 +1636,10 @@ d3-zoom@1.1.4:
     d3-selection "1"
     d3-transition "1"
 
+d3@^3.5.0:
+  version "3.5.17"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
+
 d3@^4.8.0:
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/d3/-/d3-4.8.0.tgz#1ad8d18997869c90b6ad6114e9b92425cee78460"
@@ -4400,6 +4404,13 @@ rd3@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/rd3/-/rd3-0.7.4.tgz#d5ddf1025a844e4fbef28d918276f97ee1abdcd9"
 
+react-d3@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-d3/-/react-d3-0.4.0.tgz#decedced967f48cd89ccd79fb408d47f0f2acbe2"
+  dependencies:
+    d3 "^3.5.0"
+    react ">0.12.0"
+
 react-dev-utils@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-0.5.2.tgz#50d0b962d3a94b6c2e8f2011ed6468e4124bc410"
@@ -4502,7 +4513,7 @@ react-scripts@0.9.5:
   optionalDependencies:
     fsevents "1.0.17"
 
-react@^15.5.4:
+react@>0.12.0, react@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
   dependencies:
