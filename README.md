@@ -1,9 +1,17 @@
 # skycast-proto2
-After making a mess of the deployment moving it to create react app for cleaner deployment
+After making a mess of the original deployment migrated to create react app for cleaner deployment
+
+view the page [HERE](http://skycast-proto.herokuapp.com)
 
 ## Description
 
-Simple weather web application for pulling forecast data
+Simple weather web application for delivering forecast data
+
+
+## Current
+
+Static routing and search history is not live; however, basic forecasting is functional. Just use __Continue as Guest__
+
 
 ## Bootstrapping and common commands
 
