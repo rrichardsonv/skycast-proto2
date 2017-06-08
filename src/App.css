@@ -35,11 +35,15 @@ input {
   width: 100%;
   min-width: 300px;
 }
+/*#25274D
+#464866
 
+#2E9CCA
+#29648A*/
 .log-btn {
   margin-top: 15px;
   padding: 10px 40px;
-  background-color: #333;
+  background-color: #AAABB8;
   color: #fafafa;
   border-color: transparent;
   display: inline-block;
@@ -61,7 +65,7 @@ input {
   border-color: #333;
 }
 .App-header {
-  background-color: cadetblue;
+  background-color: #25274D;
   height: 150px;
   padding: 20px;
   color: white;
@@ -109,12 +113,13 @@ input {
   color: #333;
 }
 .main-heading {
-  color: #B10DC9;
-  font-family: Skia;
+  color: white;
+  font-family: 'Bookman', sans-serif;
   font-weight: normal;
+  text-align: center;
 }
 .centered-card {
-  background-color: aliceblue;
+  background-color: #2E9CCA;
   padding: 15px 30px;
   border-radius: 5px;
   box-shadow: 0 8px 6px -8px #000; 
@@ -136,8 +141,8 @@ input {
   height: 5em;
 }
 header{
- border-top: 0.5px solid aliceblue;
- border-bottom: 0.5px solid aliceblue;
+ border-top: 0.5px solid #2E9CCA;
+ border-bottom: 0.5px solid #2E9CCA;
 }
 .header-link-group{
   list-style-type: none;

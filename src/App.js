@@ -7,8 +7,8 @@ import Search from './Searches/index'
 import Forecasts from './Forecasts/index'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import logo from '../public/sunny.svg'
-import cloud from '../public/cloudy.svg'
+import logo from '../public/sunny_header.svg'
+import cloud from '../public/cloudy_header.svg'
 import './App.css';
 
 const store = createStore(rootReducer,
@@ -21,7 +21,7 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>SkyCast Prototype</h2>
+            <h1>SkyCast Prototype</h1>
             <div className="cloud-path">
               <img src={cloud} className="moving-cloud"  alt="☁"/>
             </div>
