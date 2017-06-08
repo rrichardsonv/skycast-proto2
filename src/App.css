@@ -35,11 +35,7 @@ input {
   width: 100%;
   min-width: 300px;
 }
-/*#25274D
-#464866
 
-#2E9CCA
-#29648A*/
 .log-btn {
   margin-top: 15px;
   padding: 10px 40px;
@@ -53,6 +49,7 @@ input {
   border-style: outset;
   margin-right: 4px;
   margin-left: 4px;
+  font-size: small;
 }
 
 .log-btn:hover, .log-btn:focus {
